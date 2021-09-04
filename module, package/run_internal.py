@@ -58,7 +58,6 @@ while len(number) < 3:
     num = random.randint(1, 9)
     if num not in number:  # 새로운 수가 중복이 아니면,
         number.append(num)  # 리스트에 추가
-
 print(number)
 
 #5. 내가 태어난 날로부터 며칠 지났는지
