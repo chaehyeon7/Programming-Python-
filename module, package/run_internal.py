@@ -46,6 +46,9 @@ print(round(56, -1))
 
 
 #3. 로또 복권 자동 생성기를 만든다면
+# import random
+# print(random.sample(range(1, 45 + 1), 6))
+
 import random
 for i in range(6):
     a = random.randint(1, 46)
@@ -69,7 +72,35 @@ Christmas = datetime.datetime(2021, 12, 25)
 print(now - Christmas)
 
 #7. 내 생일이 며칠 남았지
+# my_birthday = datetime.datetime(2021, 2, 21)
+# if my_birthday < now:
+#     my_birthday = my_birthday.replace(year=2022)
+#     my_birthday.year = my_birthday.year + 1     #is not writable
+
 Remain = datetime.datetime(2021, 10, 19)
 print(now - Remain)
 
+#8. 핸덤하게 번호로 자리를 배치하는 방법은?
+# 제적(전출, 자퇴) 인원이 있다면?
+
+# 마지막 번호 묻자
+last_number = input("마지막 번호는?")
+# 1~마지막번호까지 숫자 리스트 만들자
+list_class = list(range(1, int(last_number)+1))
+# 반복
+while True:
+#     뺄 번호 붇자
+    exclude_number = input("뺼 번호는?(enter치면 그만 뺴기)")
+#     다 뻇으면 반복 끝내자
+    if exclude_number == '':
+        break
+#     빼자
+    list_class.remove(int(exclude_number))
+    print(list_class)
+
+# 섞자
+random.shuffle(list_class)
+# 출력하자
+for i, number in enumerate(list_class):
+    print(f'{i+1}\t{number}')
 
