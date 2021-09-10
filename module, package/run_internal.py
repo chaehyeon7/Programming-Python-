@@ -8,7 +8,6 @@ print(math.pow(2, 10))  #1024.0
 print(math.sin(math.pi/2))  #1.0
 # print(math.sin(math.pi))  #0.0     #1.22464^-16
 
-
 # random
 import random
 print(random.random())      #java random: 0.0<= r < 1.0
@@ -34,6 +33,7 @@ birthday = datetime.datetime(2004, 11, 29)
 print(birthday)
 print(now - birthday)
 
+'''
 print('-----------연습 - math, random, datetime ---------------')
 #1. 핸드폰 요금
 a = 59827
@@ -103,4 +103,4 @@ random.shuffle(list_class)
 # 출력하자
 for i, number in enumerate(list_class):
     print(f'{i+1}\t{number}')
-
+'''
