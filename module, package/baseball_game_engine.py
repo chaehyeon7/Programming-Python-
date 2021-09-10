@@ -9,13 +9,24 @@ def check(guess, answer):
     # 숫자 하나 꺼내서 정답에 있고, 자리가 같으면, strike += 1
     # 숫자 하나 꺼내서 정답에 있고, 자리가 다르면, ball += 1
     # guess[0] in answer
-    for i in range(3):
-        for j in range(3):
-            if guess[i] == answer[j]:
+
+    # 파이썬 스타일
+    for i, g in enumerate(guess):
+        for j, a in enumerate(answer):
+            if g == a:
                 if i == j:
                     strike += 1
-                    break
-                ball += 1
+                else:
+                    ball += 1
+
+
+    # for i in range(3):
+    #     for j in range(3):
+    #         if guess[i] == answer[j]:
+    #             if i == j:
+    #                 strike += 1
+    #                 break
+    #             ball += 1
 
     return strike, ball
 
