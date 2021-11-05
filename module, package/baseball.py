@@ -24,31 +24,32 @@ def load_history():
 answer = make_answer()
 print(answer)
 count = 0
+# 반복
 
-# 무한반복
-while True:
-# 숫자묻자
+
+while True: # 질문
     guess = input('예상 숫자 (t: history, top3) : ')
     # t를 입력하면 top3 불러오기
     if guess == 't':
         top3 = load_history()
         print(top3)
-    # 숫자인지 아닌지 확인하자
+        continue
+# 숫자인지 아닌지 확인
     try:
         guess_int = int(guess)
     except ValueError as e:
         print('숫자를 입력하세요')
         continue
-    if len(guess) != len(answer):   #3
-        raise InvalidLenghtError('정답의 길이와 다릅니다.')
-        print(f'정답의 길이와 다른 것을 입력했네요. {len(answer)}문자')
+    if len(guess) != len(answer):
+        # raise InvalidLengthError('정답의 길이와 다름니다.)
+        print(f'정답의 길이와 다름니다. {len(answer)}자리 수를 입력하세요')
         continue
-
 # 결과 판정
 strike, ball = check(guess, answer)
 count += 1
 # 출력
-print(f'{guess}\tstrike: {strike}, ball: {ball}\t {count}try')# 정답 == 숫자, 끝내자
+print(f'{guess}\tstrike: {strike}, ball: {ball}\t {count}try')
+# 정답 == 숫자, 반복 종료
 if answer == guess:
     print('정답입니다.')
     # 저장(정답, 시도횟수)
