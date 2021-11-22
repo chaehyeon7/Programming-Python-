@@ -9,7 +9,7 @@ class TictactoeGUI:
         self.init_GUI()
 
     def init_GUI(self):
-        self.CANVAS_SIZE = 3001
+        self.CANVAS_SIZE = 300
         self.root = tkinter.Tk()
         self.root.title('틱택토')
         self.root.geometry(f'{self.CANVAS_SIZE}x{self.CANVAS_SIZE}')  # 문자열
