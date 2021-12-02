@@ -5,6 +5,7 @@ class Book:
         self.book_list = []
         self.store_list = []
         self.location_list = []
+        self.init_book()
 
     def add_book(self):  # 책 새로 추가
         # 책 추가
@@ -12,26 +13,21 @@ class Book:
         new_book.set_book()
         self.book_list.append(new_book)
 
-    # 매장 선택
-    def search_store(self):
-        print('1. 관악')
-        print('2. 영등포')
-        print('3. 강남')
-        store_search = input('원하는 서점을 선택하세요 : ')
-
     # 책 검색
     def search_book(self):
         searched_book = []
+
+        print("-------------------")
         name = input('책 검색하세요 : ')
+        print("-------------------")
         for book in self.book_list:
             if name == book.title:
                 print(book)
-                break
+                print("-------------------")
                 searched_book.append(book)
 
         if len(searched_book) == 0:
-            print("서점에 등록된 책이 없습니다.")
-
+            print("책을 찾을 수 없습니다.")
 
 # 모든 책 보여주기
     def show_book(self):
@@ -39,21 +35,34 @@ class Book:
             print('-------------------')
             print(f'{index + 1}')
             print(book)
-            print('-------------------\n')
+            print('-------------------')
 
     # 매장 검색
     def search_store(self):
         searched_store = []
 
+        print("-------------------")
         print('1. 관악')
         print('2. 영등포')
         print('3. 강남')
         bookstore = input('매장을 검색하세요 : ')
+        print("-------------------")
         for store in self.book_list:
             if bookstore == store.bookstore:
                 print(store)
-                break
-                searched_store.apped(store)
+                print("-------------------")
+                searched_store.append(store)
 
         if len(searched_store) == 0:
             print("서점에 등록된 책이 없습니다.")
+
+
+    def init_book(self):
+        hgp = contentsBook()
+        hgp.title = '혼자 공부하는 파이썬'
+        hgp.writer = '윤인성'
+        hgp.year = '2019'
+        hgp.original_price = '18000'
+        hgp.p_state = '매우 좋음'
+        hgp.p_bookstore = '관악점'
+        self.book_list.append(hgp)
